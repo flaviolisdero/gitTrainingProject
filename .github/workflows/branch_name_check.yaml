@@ -18,7 +18,7 @@ jobs:
 
     - name: Verify branch name starts with "feature-" or "bugfix-"
       run: |
-        branch_name="${GITHUB_REF#refs/heads/}"
+        branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
         if [[ "$branch_name" != ft/* ]] && [[ "$branch_name" != hf/* ]]; then
           echo "Branch name ($branch_name) does not start with 'ft/' or 'hf/'"
           exit 1
