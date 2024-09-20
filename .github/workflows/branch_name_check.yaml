@@ -16,11 +16,11 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v3
 
-    - name: Verify branch name starts with "feature-" or "bugfix-"
+    - name: Verify branch name starts with "ft/" or "hf/"
       run: |
-        branch_name=${{ github.ref#refs/heads/ }}
-        if [[ "$branch_name" != feature-* ]] && [[ "$branch_name" != bugfix-* ]]; then
-          echo "Branch name ($branch_name) does not start with 'feature-' or 'bugfix-'"
+        branch_name="${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
+        if [[ "$branch_name" != ft/* ]] && [[ "$branch_name" != hf/* ]]; then
+          echo "Branch name ($branch_name) does not start with 'ft/' or 'hf/'"
           exit 1
         else
           echo "Branch name ($branch_name) is valid."
