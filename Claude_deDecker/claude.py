@@ -1,1 +1,1 @@
-print('Claude de Decker')
+print('Claude de Decker can't code')
