@@ -1,1 +1,2 @@
-print("Ivan Esin")
+print("Ivan Esin is a good chess player")
+
