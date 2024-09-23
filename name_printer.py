@@ -1,1 +1,1 @@
-https://github.com/gitTrainingOrganizationOrange/gitTrainingProject.git
+print("Louis Parys")
